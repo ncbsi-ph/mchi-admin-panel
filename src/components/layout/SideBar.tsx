@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-import Menuitems from './MEnuitems';
+import Menuitems from './Menuitems';
 
 const { Sider } = Layout;
 const SideBar = () => {
