@@ -49,7 +49,7 @@ const HeadBar = () => {
   return (
     <Header className="bg-white grid justify-end overflow-auto z-10 sticky top-0">
       <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
-        <a>
+        <a className="flex items-center gap-x-2">
           Allan
           <MdKeyboardArrowDown />
         </a>

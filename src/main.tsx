@@ -20,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           },
           components: {
             Menu: {
-              darkItemBg: '#e18e26',
+              darkItemBg: '#FFFFFF',
+              darkItemColor: '#000000',
+              darkItemHoverBg: '#010180',
             },
           },
         }}

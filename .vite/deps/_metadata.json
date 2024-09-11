@@ -1,0 +1,89 @@
+{
+  "hash": "5a6cc7c1",
+  "browserHash": "52b9c6d1",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "1a973a28",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "48182c51",
+      "needsInterop": true
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "5da66fd4",
+      "needsInterop": false
+    },
+    "antd": {
+      "src": "../../node_modules/antd/es/index.js",
+      "file": "antd.js",
+      "fileHash": "4660086e",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "1d294755",
+      "needsInterop": false
+    },
+    "@tanstack/react-query-devtools": {
+      "src": "../../node_modules/@tanstack/react-query-devtools/build/modern/index.js",
+      "file": "@tanstack_react-query-devtools.js",
+      "fileHash": "ffdcf9f6",
+      "needsInterop": false
+    },
+    "zustand": {
+      "src": "../../node_modules/zustand/esm/index.mjs",
+      "file": "zustand.js",
+      "fileHash": "4ec8a7ec",
+      "needsInterop": false
+    },
+    "react-icons/md": {
+      "src": "../../node_modules/react-icons/md/index.mjs",
+      "file": "react-icons_md.js",
+      "fileHash": "349274fb",
+      "needsInterop": false
+    },
+    "react-icons/ai": {
+      "src": "../../node_modules/react-icons/ai/index.mjs",
+      "file": "react-icons_ai.js",
+      "fileHash": "0bf87718",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "ITUUECIS-JBVXSX2I": {
+      "file": "ITUUECIS-JBVXSX2I.js"
+    },
+    "CNBMJT5I-BRB7JAOL": {
+      "file": "CNBMJT5I-BRB7JAOL.js"
+    },
+    "chunk-SH4EOMF7": {
+      "file": "chunk-SH4EOMF7.js"
+    },
+    "chunk-G63LYFJB": {
+      "file": "chunk-G63LYFJB.js"
+    },
+    "chunk-7SYRFDJS": {
+      "file": "chunk-7SYRFDJS.js"
+    },
+    "chunk-PFCNFLNY": {
+      "file": "chunk-PFCNFLNY.js"
+    },
+    "chunk-LIDWTX24": {
+      "file": "chunk-LIDWTX24.js"
+    },
+    "chunk-EMSD3NPF": {
+      "file": "chunk-EMSD3NPF.js"
+    },
+    "chunk-WYXF2I3I": {
+      "file": "chunk-WYXF2I3I.js"
+    }
+  }
+}

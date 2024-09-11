@@ -11,7 +11,7 @@ const SideBar = () => {
         position: 'sticky',
         top: 0,
         left: 0,
-        backgroundColor: '#010180',
+        backgroundColor: '#ffffff',
         zIndex: 100,
       }}
     >
