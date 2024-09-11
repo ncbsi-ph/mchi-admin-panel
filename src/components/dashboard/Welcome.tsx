@@ -1,14 +1,14 @@
 import { Card } from 'antd';
 import dayjs, { Dayjs } from 'dayjs';
 import React, { useEffect, useState } from 'react';
-// import { useUser } from '../../store/store';
+import { useUser } from '../../store/store';
 
 const Welcome: React.FC = () => {
   // State variables
   const [currentTime, setCurrentTime] = useState<Dayjs>(dayjs());
   const [greeting, setGreeting] = useState<string>('');
   const [cover, setCover] = useState<string>('');
-  //   const { username } = useUser();
+  const { username } = useUser();
 
   // Function to format date and time
   const formatDate = (date: Dayjs): string => {
@@ -46,7 +46,7 @@ const Welcome: React.FC = () => {
     <div className="grid gap-y-5">
       <Card cover={<img src={cover} alt="Cover" />}>
         <h2 className="text-lg font-medium capitalize">
-          Good {greeting}, Allan
+          Good {greeting}, {username}
         </h2>
         <p className="text-slate-500 py-2">
           Today is {formatDate(currentTime)}

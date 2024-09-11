@@ -29,3 +29,30 @@ export const uploadImage = async (
     })
     .then((res) => res.data);
 };
+
+export const getAdministrator = async (
+  token: string
+): Promise<Administrators[]> => {
+  return await api
+    .get('users', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addAdministrator = async (
+  payload: AddAdministrators,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('register', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const changePassword = async (
+  payload: Password,
+  userName: string,
+  token: string
+): Promise<string> => {
+  return await api
+    .post(`user/${userName}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
