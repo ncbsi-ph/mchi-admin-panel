@@ -22,3 +22,26 @@ interface Password {
   oldPassword: string;
   newPassword: string;
 }
+interface Override {
+  newPass: string;
+}
+interface HomeBannerType {
+  id: number;
+  header: string;
+  sub_header: string;
+  img: string;
+  key: string; // Adding a key for antd table row
+  link: string;
+  position: number;
+}
+
+interface BannerPosition {
+  id: number;
+  position: number;
+}
+interface AddHomeBanner {
+  header: string;
+  sub_header: string;
+  img: string;
+  link: string;
+}

@@ -6,6 +6,8 @@ import { useQuery } from '@tanstack/react-query';
 import { getAdministrator } from '../api';
 import SearchFilter from '../components/SearchFilter';
 import AddAdmin from '../components/administrators/AddAdmin';
+import OverridePassword from '../components/administrators/OverridePassword';
+import DeleteAdmin from '../components/administrators/DeleteAdmin';
 
 const Administrators = () => {
   const { setItems } = useBreadcrumbActions();
@@ -56,8 +58,8 @@ const Administrators = () => {
           </Tag>
         ) : (
           <div className="flex items-center">
-            {/* <OverridePassword data={record} />
-            <DeleteAdmin data={record} /> */}
+            <OverridePassword data={record} />
+            <DeleteAdmin data={record} />
           </div>
         ),
     },
