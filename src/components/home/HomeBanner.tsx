@@ -1,4 +1,4 @@
-const HomeBanner = () => {
+const HomeBanner: React.FC = () => {
   return <div>HomeBanner</div>;
 };
 
