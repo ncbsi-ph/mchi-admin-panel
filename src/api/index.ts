@@ -206,3 +206,37 @@ export const editHomeAbout = async (
     .put(`home/about/${id}`, payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getEyeService = async (token: string): Promise<Services[]> => {
+  return await api
+    .get('service/eye-center', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addEyeService = async (
+  payload: UpsertServices,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/eye-center', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editEyeService = async (
+  payload: UpsertServices,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/eye-center/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteEyeService = async (
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/eye-center/${id}`, authorizedConfig(token))
+    .then((res) => res.data);
+};

@@ -5,6 +5,7 @@ import {
   MdInfoOutline,
   MdOutlineDashboard,
   MdOutlineHealthAndSafety,
+  MdOutlineMedicalServices,
 } from 'react-icons/md';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -37,6 +38,12 @@ const items: MenuProps['items'] = [
     ),
   ]),
   getItem(<Link to="/hmo">HMO</Link>, '/hmo', <MdOutlineHealthAndSafety />),
+  getItem('Services', 'Services', <MdOutlineMedicalServices />, [
+    getItem(
+      <Link to="/services/eye-center">Eye Center</Link>,
+      '/services/eye-center'
+    ),
+  ]),
 ];
 const Menuitems = () => {
   let location = useLocation();

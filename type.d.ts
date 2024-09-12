@@ -102,3 +102,12 @@ interface EditHomeAbout {
   sub_title: string;
   description: string;
 }
+
+interface Services {
+  id: number;
+  title: string;
+}
+
+interface UpsertServices {
+  title: string;
+}
