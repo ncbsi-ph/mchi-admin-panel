@@ -1,7 +1,7 @@
 import { Menu, MenuProps } from 'antd';
 import { useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
-import { MdOutlineDashboard } from 'react-icons/md';
+import { MdInfoOutline, MdOutlineDashboard } from 'react-icons/md';
 import { Link, useLocation } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -25,6 +25,13 @@ function getItem(
 const items: MenuProps['items'] = [
   getItem(<Link to="/">Dashboard</Link>, '/', <MdOutlineDashboard />),
   getItem(<Link to="/home">Home</Link>, '/home', <AiOutlineHome />),
+  getItem('About', 'About', <MdInfoOutline />, [
+    getItem(<Link to="/about/history">History</Link>, '/about/history'),
+    getItem(
+      <Link to="/about/mission-vision">Mission & Vision</Link>,
+      '/about/mission-vision'
+    ),
+  ]),
 ];
 const Menuitems = () => {
   let location = useLocation();

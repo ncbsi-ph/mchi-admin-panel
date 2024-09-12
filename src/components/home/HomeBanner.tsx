@@ -21,6 +21,8 @@ import { handleError } from '../../helpers';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { CSS } from '@dnd-kit/utilities';
 import AddHomeBanner from './AddHomeBanner';
+import EditHomeBanner from './EditHomeBanner';
+import DeleteHomeBanner from './DeleteHomeBanner';
 
 const HomeBanner: React.FC = () => {
   const { token } = useUser();
@@ -49,6 +51,15 @@ const HomeBanner: React.FC = () => {
       title: 'Link',
       dataIndex: 'link',
       key: 'link',
+    },
+    {
+      key: 'action',
+      render: (_, record) => (
+        <div className="flex justify-end">
+          <EditHomeBanner data={record} />
+          <DeleteHomeBanner data={record} />
+        </div>
+      ),
     },
   ];
 

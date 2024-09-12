@@ -45,3 +45,30 @@ interface AddHomeBanner {
   img: string;
   link: string;
 }
+
+interface EditHomeBanner {
+  header: string;
+  sub_header: string;
+  img: string | null;
+  link: string;
+  prevImg: string | null;
+}
+interface Delete {
+  img: string;
+}
+
+interface History {
+  id: number;
+  history: string;
+}
+
+interface MissionVision {
+  id: number;
+  mission: string;
+  vision: string;
+}
+
+interface EditMissionVision {
+  mission: string;
+  vision: string;
+}

@@ -22,10 +22,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             Menu: {
               darkItemBg: '#010180',
               darkItemColor: '#FFFFFF',
-              darkItemHoverBg: '#FFFFFF',
-              darkItemHoverColor: '#000000',
+              // darkItemHoverBg: '#FFFFFF',
+              // darkItemHoverColor: '#000000',
               darkItemSelectedBg: '#FFFFFF',
-              darkItemSelectedColor: '#000000',
+              darkItemSelectedColor: '#7CB9E8 !important',
             },
           },
         }}

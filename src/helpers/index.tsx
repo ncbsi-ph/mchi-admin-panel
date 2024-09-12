@@ -1,6 +1,7 @@
 import { message, Tooltip } from 'antd';
 import { BiEdit } from 'react-icons/bi';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import { v4 as uuidv4 } from 'uuid';
 
 export const cookieLog = 'mchi_user_presence';
 
@@ -38,3 +39,13 @@ export const DeleteButton = ({ onClick }: BtnProps) => (
     </Tooltip>
   </button>
 );
+
+export const imagePlaceHolderFileList = (img: string) => [
+  {
+    uid: uuidv4(),
+    name: img.substring(img.lastIndexOf('/') + 1),
+    status: 'done',
+    url: img,
+    thumbUrl: img,
+  },
+];

@@ -98,3 +98,59 @@ export const addHomeBanner = async (
     .post('home/banner', payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const editHomeBanner = async (
+  payload: EditHomeBanner,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`home/banner/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const deleteHomeBanner = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`home/banner/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};
+
+export const getHistory = async (token: string): Promise<History> => {
+  return await api
+    .get('about/history', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editHistory = async (
+  history: string,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`about/history/${id}`, history, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const getMissionVision = async (
+  token: string
+): Promise<MissionVision> => {
+  return await api
+    .get('about/mission-vision', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editMissionVision = async (
+  payload: EditMissionVision,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`about/mission-vision/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};

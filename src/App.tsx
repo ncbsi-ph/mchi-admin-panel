@@ -6,6 +6,8 @@ import Authentication from './components/Authentication';
 import Login from './pages/Login';
 import Administrators from './pages/Administrators';
 import Authorization from './components/Authorization';
+import AboutHistory from './pages/AboutHistory';
+import AboutMissionVision from './pages/AboutMissionVision';
 
 function App() {
   return (
@@ -15,6 +17,11 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/about/history" element={<AboutHistory />} />
+            <Route
+              path="/about/mission-vision"
+              element={<AboutMissionVision />}
+            />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />
             </Route>
