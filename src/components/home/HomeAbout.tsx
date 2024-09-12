@@ -4,6 +4,7 @@ import parse from 'html-react-parser';
 import { useQuery } from '@tanstack/react-query';
 import { getHomeAbout } from '../../api';
 import { Card, Skeleton } from 'antd';
+import EditAboutFormModal from './EditAboutFormModal';
 
 const HomeAbout = () => {
   const { token } = useUser();
@@ -32,7 +33,7 @@ const HomeAbout = () => {
       key: 'action',
       render: (_, record) => (
         <div className="flex items-center gap-x-1">
-          {/* <EditAboutFormModal data={record} /> */}
+          <EditAboutFormModal data={record} />
         </div>
       ),
       width: 15,
