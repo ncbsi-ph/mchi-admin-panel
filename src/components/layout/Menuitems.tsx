@@ -1,7 +1,11 @@
 import { Menu, MenuProps } from 'antd';
 import { useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
-import { MdInfoOutline, MdOutlineDashboard } from 'react-icons/md';
+import {
+  MdInfoOutline,
+  MdOutlineDashboard,
+  MdOutlineHealthAndSafety,
+} from 'react-icons/md';
 import { Link, useLocation } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -32,6 +36,7 @@ const items: MenuProps['items'] = [
       '/about/mission-vision'
     ),
   ]),
+  getItem(<Link to="/hmo">HMO</Link>, '/hmo', <MdOutlineHealthAndSafety />),
 ];
 const Menuitems = () => {
   let location = useLocation();

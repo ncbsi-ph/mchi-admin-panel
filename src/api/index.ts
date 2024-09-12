@@ -154,3 +154,55 @@ export const editMissionVision = async (
     .put(`about/mission-vision/${id}`, payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getHmo = async (token: string): Promise<HMO[]> => {
+  return await api.get('hmo', authorizedConfig(token)).then((res) => res.data);
+};
+
+export const addHmo = async (
+  payload: AddHMO,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('hmo', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editHmo = async (
+  payload: EditHMO,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`hmo/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteHmo = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`hmo/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};
+
+export const getHomeAbout = async (token: string): Promise<HomeAbout> => {
+  return await api
+    .get('home/about', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editHomeAbout = async (
+  payload: EditHomeAbout,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`home/about/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};

@@ -72,3 +72,33 @@ interface EditMissionVision {
   mission: string;
   vision: string;
 }
+
+interface HMO {
+  id: number;
+  name: string;
+  img: string;
+}
+
+interface AddHMO {
+  name: string;
+  img: string;
+}
+
+interface EditHMO {
+  name: string;
+  img: string;
+  prevImg: string | null;
+}
+
+interface HomeAbout {
+  id: number;
+  title: string;
+  sub_title: string;
+  description: string;
+}
+
+interface EditHomeAbout {
+  title: string;
+  sub_title: string;
+  description: string;
+}
