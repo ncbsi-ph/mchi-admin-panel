@@ -9,7 +9,8 @@ import Authorization from './components/Authorization';
 import AboutHistory from './pages/AboutHistory';
 import AboutMissionVision from './pages/AboutMissionVision';
 import Hmo from './pages/Hmo';
-import ServiceEye from './pages/ServiceEye';
+
+import ServiceCenter from './pages/ServiceCenter';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
             />
 
             <Route path="/hmo" element={<Hmo />} />
-            <Route path="/services/eye-center" element={<ServiceEye />} />
+            <Route path="/services/eye-center" element={<ServiceCenter />} />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />
             </Route>

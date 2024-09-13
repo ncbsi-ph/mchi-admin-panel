@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { App, Button, Form } from 'antd';
 import { useState } from 'react';
-import { useUser } from '../../store/store';
-import { addEyeService } from '../../api';
-import { handleError } from '../../helpers';
-import ServiceFormModal from './ServiceFormModal';
+import { useUser } from '../../../store/store';
+import { addEyeService } from '../../../api';
+import { handleError } from '../../../helpers';
+import ServiceFormModal from '../ServiceFormModal';
 
 const AddEye = () => {
   const [isOpen, setIsOpen] = useState(false);

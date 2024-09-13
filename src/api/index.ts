@@ -240,3 +240,43 @@ export const deleteEyeService = async (
     .delete(`service/eye-center/${id}`, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getEyeServiceImg = async (
+  token: string
+): Promise<ServicesImg[]> => {
+  return await api
+    .get('service/eye-center-img', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addEyeServiceImg = async (
+  payload: AddServicesImg,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/eye-center-img', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editEyeServiceImg = async (
+  payload: EditServicesImg,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/eye-center-img/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteEyeServiceImg = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/eye-center-img/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};

@@ -111,3 +111,17 @@ interface Services {
 interface UpsertServices {
   title: string;
 }
+
+interface ServicesImg {
+  id: number;
+  img: string;
+}
+
+interface AddServicesImg {
+  img: string;
+}
+
+interface EditServicesImg {
+  img: string;
+  prevImg: string | null;
+}

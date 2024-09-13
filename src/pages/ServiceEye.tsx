@@ -1,31 +1,14 @@
-import { useEffect } from 'react';
-import { useBreadcrumbActions, useUser } from '../store/store';
+import { useUser } from '../store/store';
 import Table, { ColumnsType } from 'antd/es/table';
 import { useQuery } from '@tanstack/react-query';
 import { getEyeService } from '../api';
 import { Card, Skeleton } from 'antd';
-import AddEye from '../components/services/AddEye';
-import EditEye from '../components/services/EditEye';
-import DeleteEye from '../components/services/DeleteEye';
+import AddEye from '../components/services/eye-service/AddEye';
+import EditEye from '../components/services/eye-service/EditEye';
+import DeleteEye from '../components/services/eye-service/DeleteEye';
 
 const ServiceEye = () => {
   const { token } = useUser();
-  const { setItems } = useBreadcrumbActions();
-
-  useEffect(() => {
-    setItems([
-      {
-        title: 'Dashboard',
-        href: '/',
-      },
-      {
-        title: 'Services',
-      },
-      {
-        title: 'Eye Center',
-      },
-    ]);
-  });
 
   const columns: ColumnsType<Services> = [
     {

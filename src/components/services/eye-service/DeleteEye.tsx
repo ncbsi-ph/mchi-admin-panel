@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { App } from 'antd';
 import { useState } from 'react';
-import { useUser } from '../../store/store';
-import { deleteEyeService } from '../../api';
-import { handleError } from '../../helpers';
-import DeleteModal from '../DeleteModal';
+import { useUser } from '../../../store/store';
+import { deleteEyeService } from '../../../api';
+import { handleError } from '../../../helpers';
+import DeleteModal from '../../DeleteModal';
 
 const DeleteEye = ({ data }: { data: Services }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ const DeleteEye = ({ data }: { data: Services }) => {
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['eye-service'] });
+      queryClient.invalidateQueries({ queryKey: ['eye-center'] });
     },
   });
   return (

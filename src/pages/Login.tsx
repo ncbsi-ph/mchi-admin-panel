@@ -49,7 +49,7 @@ const Login = () => {
       <div className="max-w-md grid m-auto h-screen content-center ">
         <div className="shadow-md px-10 py-5 rounded-lg bg-white">
           <h1 className="font-medium text-xl text-center py-10 text-primary">
-            Metro Calaca Hospital Corp.{' '}
+            Mercy Community Hospital Corp.
             <span className="block text-slate-500">Admin Panel</span>
           </h1>
           <Form layout="vertical" requiredMark={false} onFinish={handleLogin}>
