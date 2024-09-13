@@ -280,3 +280,37 @@ export const deleteEyeServiceImg = async (
     })
     .then((res) => res.data);
 };
+
+export const getSpecialService = async (token: string): Promise<Services[]> => {
+  return await api
+    .get('service/special-care', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addSpecialService = async (
+  payload: UpsertServices,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/special-care', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editSpecialService = async (
+  payload: UpsertServices,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/special-care/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteSpecialService = async (
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/special-care/${id}`, authorizedConfig(token))
+    .then((res) => res.data);
+};

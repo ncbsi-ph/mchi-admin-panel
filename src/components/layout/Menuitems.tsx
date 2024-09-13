@@ -43,6 +43,10 @@ const items: MenuProps['items'] = [
       <Link to="/services/eye-center">Eye Center</Link>,
       '/services/eye-center'
     ),
+    getItem(
+      <Link to="/services/special-care">Special Care</Link>,
+      '/services/special-care'
+    ),
   ]),
 ];
 const Menuitems = () => {
