@@ -314,3 +314,48 @@ export const deleteSpecialService = async (
     .delete(`service/special-care/${id}`, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getNewsEvents = async (token: string): Promise<NewsEvents[]> => {
+  return await api
+    .get('news-events', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const getSpecialServiceImg = async (
+  token: string
+): Promise<ServicesImg[]> => {
+  return await api
+    .get('service/special-care-img', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addSpecialServiceImg = async (
+  payload: AddServicesImg,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/special-care-img', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const editSpecialServiceImg = async (
+  payload: EditServicesImg,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/special-care-img/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteSpecialServiceImg = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/special-care-img/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};

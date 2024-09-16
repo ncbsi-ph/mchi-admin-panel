@@ -125,3 +125,13 @@ interface EditServicesImg {
   img: string;
   prevImg: string | null;
 }
+
+interface NewsEvents {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  date: date;
+  type: string;
+  img: string;
+}

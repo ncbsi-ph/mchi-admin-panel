@@ -2,14 +2,14 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { App } from 'antd';
 import { useState } from 'react';
 import { useUser } from '../../../store/store';
-import { deleteSpecialService } from '../../../api';
+import { deleteSpecialServiceImg } from '../../../api';
 import { handleError } from '../../../helpers';
 import DeleteModal from '../../DeleteModal';
 
-const DeleteSpecial = ({ data }: { data: Services }) => {
+const DeleteSpecialServiceImg = ({ data }: { data: ServicesImg }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const queryClient = useQueryClient();
   const { message } = App.useApp();
+  const queryClient = useQueryClient();
   const { token } = useUser();
 
   const handleOpen = () => {
@@ -20,10 +20,13 @@ const DeleteSpecial = ({ data }: { data: Services }) => {
     setIsOpen(false);
   };
 
-  const deleteSpecialMutation = useMutation({
+  const deleteSpecialImgMutation = useMutation({
     mutationFn: async () => {
       try {
-        const response = await deleteSpecialService(data.id, token);
+        const payload: Delete = {
+          img: data.img,
+        };
+        const response = await deleteSpecialServiceImg(payload, data.id, token);
         message.success(response);
         setIsOpen(false);
       } catch (err: any) {
@@ -31,20 +34,20 @@ const DeleteSpecial = ({ data }: { data: Services }) => {
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['special-care'] });
+      queryClient.invalidateQueries({ queryKey: ['special-service-img'] });
     },
   });
+
   return (
     <DeleteModal
-      isSubmitting={deleteSpecialMutation.isPending}
+      isSubmitting={deleteSpecialImgMutation.isPending}
       onCancel={handleClose}
       onClick={handleOpen}
-      onSubmit={deleteSpecialMutation.mutate}
+      onSubmit={deleteSpecialImgMutation.mutate}
       open={isOpen}
-      title="Special Service"
-      target={data.title}
+      title="Special Care Service Image"
     />
   );
 };
 
-export default DeleteSpecial;
+export default DeleteSpecialServiceImg;

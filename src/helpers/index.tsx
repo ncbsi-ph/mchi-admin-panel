@@ -49,3 +49,5 @@ export const imagePlaceHolderFileList = (img: string) => [
     thumbUrl: img,
   },
 ];
+
+export const DATE_FORMAT = 'MM/DD/YYYY';

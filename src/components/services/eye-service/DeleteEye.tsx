@@ -41,7 +41,7 @@ const DeleteEye = ({ data }: { data: Services }) => {
       onClick={handleOpen}
       onSubmit={deleteEyeMutation.mutate}
       open={isOpen}
-      title="Delete Eye Service"
+      title="Eye Service"
       target={data.title}
     />
   );

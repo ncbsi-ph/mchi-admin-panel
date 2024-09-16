@@ -1,6 +1,7 @@
 import { Menu, MenuProps } from 'antd';
 import { useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
+import { BiNews } from 'react-icons/bi';
 import {
   MdInfoOutline,
   MdOutlineDashboard,
@@ -48,6 +49,11 @@ const items: MenuProps['items'] = [
       '/services/special-care'
     ),
   ]),
+  getItem(
+    <Link to="/news-events">News & Events</Link>,
+    '/news-events',
+    <BiNews />
+  ),
 ];
 const Menuitems = () => {
   let location = useLocation();

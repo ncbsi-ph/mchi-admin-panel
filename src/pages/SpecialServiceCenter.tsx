@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useBreadcrumbActions } from '../store/store';
 import ServiceSpecial from './ServiceSpecial';
 import { Divider } from 'antd';
+import SpecialServiceImg from './SpecialServiceImg';
 
 const SpecialServiceCenter = () => {
   const { setItems } = useBreadcrumbActions();
@@ -23,6 +24,7 @@ const SpecialServiceCenter = () => {
     <div>
       <ServiceSpecial />
       <Divider />
+      <SpecialServiceImg />
     </div>
   );
 };

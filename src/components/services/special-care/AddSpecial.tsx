@@ -43,7 +43,7 @@ const AddSpecial = () => {
   return (
     <div>
       <Button type="primary" onClick={handleOpen}>
-        Add Eye Service
+        Add Special Service
       </Button>
       <ServiceFormModal
         confirmLoading={addSpecialMutation.isPending}

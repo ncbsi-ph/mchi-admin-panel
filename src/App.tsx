@@ -11,6 +11,7 @@ import AboutMissionVision from './pages/AboutMissionVision';
 import Hmo from './pages/Hmo';
 import ServiceCenter from './pages/ServiceCenter';
 import SpecialServiceCenter from './pages/SpecialServiceCenter';
+import NewsEvents from './pages/NewsEvents';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               path="/services/special-care"
               element={<SpecialServiceCenter />}
             />
+            <Route path="/news-events" element={<NewsEvents />} />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />
             </Route>

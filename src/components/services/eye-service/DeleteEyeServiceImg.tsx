@@ -45,7 +45,7 @@ const DeleteEyeServiceImg = ({ data }: { data: ServicesImg }) => {
       onClick={handleOpen}
       onSubmit={deleteEyeImgMutation.mutate}
       open={isOpen}
-      title="Delete Eye Service Image"
+      title="Eye Service Image"
     />
   );
 };
