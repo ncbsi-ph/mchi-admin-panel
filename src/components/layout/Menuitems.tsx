@@ -48,6 +48,10 @@ const items: MenuProps['items'] = [
       <Link to="/services/special-care">Special Care</Link>,
       '/services/special-care'
     ),
+    getItem(
+      <Link to="/services/general">General Service</Link>,
+      '/services/general'
+    ),
   ]),
   getItem(
     <Link to="/news-events">News & Events</Link>,

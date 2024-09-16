@@ -359,3 +359,75 @@ export const deleteSpecialServiceImg = async (
     })
     .then((res) => res.data);
 };
+
+export const getGeneralService = async (token: string): Promise<Services[]> => {
+  return await api
+    .get('service/general', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addGeneralService = async (
+  payload: UpsertServices,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/general', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editGeneralService = async (
+  payload: UpsertServices,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/general/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteGeneralService = async (
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/general/${id}`, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const getGeneralServiceImg = async (
+  token: string
+): Promise<ServicesImg[]> => {
+  return await api
+    .get('service/general-img', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addGeneralServiceImg = async (
+  payload: AddServicesImg,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/general-img', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const editGeneralServiceImg = async (
+  payload: EditServicesImg,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/general-img/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteGeneralServiceImg = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/general-img/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};

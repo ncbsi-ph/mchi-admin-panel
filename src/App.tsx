@@ -12,6 +12,7 @@ import Hmo from './pages/Hmo';
 import ServiceCenter from './pages/ServiceCenter';
 import SpecialServiceCenter from './pages/SpecialServiceCenter';
 import NewsEvents from './pages/NewsEvents';
+import GeneralServiceCenter from './pages/GeneralServiceCenter';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
             <Route
               path="/services/special-care"
               element={<SpecialServiceCenter />}
+            />
+            <Route
+              path="/services/general"
+              element={<GeneralServiceCenter />}
             />
             <Route path="/news-events" element={<NewsEvents />} />
             <Route element={<Authorization />}>
