@@ -13,6 +13,7 @@ import ServiceCenter from './pages/ServiceCenter';
 import SpecialServiceCenter from './pages/SpecialServiceCenter';
 import NewsEvents from './pages/NewsEvents';
 import GeneralServiceCenter from './pages/GeneralServiceCenter';
+import RadiologyServiceCenter from './pages/RadiologyServiceCenter';
 
 function App() {
   return (
@@ -37,6 +38,10 @@ function App() {
             <Route
               path="/services/general"
               element={<GeneralServiceCenter />}
+            />
+            <Route
+              path="/services/radiology"
+              element={<RadiologyServiceCenter />}
             />
             <Route path="/news-events" element={<NewsEvents />} />
             <Route element={<Authorization />}>

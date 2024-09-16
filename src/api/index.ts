@@ -431,3 +431,76 @@ export const deleteGeneralServiceImg = async (
     })
     .then((res) => res.data);
 };
+export const getRadiologyService = async (
+  token: string
+): Promise<Services[]> => {
+  return await api
+    .get('service/radiology', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addRadiologyService = async (
+  payload: UpsertServices,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/radiology', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editRadiologyService = async (
+  payload: UpsertServices,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/radiology/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteRadiologyService = async (
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/radiology/${id}`, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const getRadiologyServiceImg = async (
+  token: string
+): Promise<ServicesImg[]> => {
+  return await api
+    .get('service/radiology-img', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addRadiologyServiceImg = async (
+  payload: AddServicesImg,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/radiology-img', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const editRadiologyServiceImg = async (
+  payload: EditServicesImg,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/radiology-img/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteRadiologyServiceImg = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/radiology-img/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};
