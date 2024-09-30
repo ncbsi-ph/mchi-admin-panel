@@ -321,6 +321,35 @@ export const getNewsEvents = async (token: string): Promise<NewsEvents[]> => {
     .then((res) => res.data);
 };
 
+export const addNewsEvents = async (
+  payload: AddNewsEvents,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('news-events', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editNewsEvents = async (
+  payload: EditNewsEvents,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`news-events/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const delNewsEvents = async (
+  payload: Delete,
+  id: number,
+  token: string
+) => {
+  return await api
+    .delete(`news-events/${id}`, { data: payload, ...authorizedConfig(token) })
+    .then((res) => res.data);
+};
+
 export const getSpecialServiceImg = async (
   token: string
 ): Promise<ServicesImg[]> => {

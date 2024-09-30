@@ -6,6 +6,9 @@ import { useQuery } from '@tanstack/react-query';
 import { getNewsEvents } from '../api';
 import dayjs from 'dayjs';
 import { DATE_FORMAT } from '../helpers';
+import AddNewsEvents from '../components/news-events/AddNewsEvents';
+import EditNewsEvent from '../components/news-events/EditNewsEvent';
+import DeleteNewsEvent from '../components/news-events/DeleteNewsEvent';
 
 const NewsEvents = () => {
   const { setItems } = useBreadcrumbActions();
@@ -52,6 +55,16 @@ const NewsEvents = () => {
       dataIndex: 'type',
       key: 'type',
     },
+    {
+      dataIndex: 'action',
+      key: 'action',
+      render: (_, record) => (
+        <div className="flex items-center gap-x-1 justify-end">
+          <EditNewsEvent data={record} />
+          <DeleteNewsEvent data={record} />
+        </div>
+      ),
+    },
   ];
 
   const { isLoading, error, data } = useQuery({
@@ -68,7 +81,14 @@ const NewsEvents = () => {
   if (isLoading) return <Skeleton active />;
   if (error) return <p>{`An error has occurred: ${error}`}</p>;
   return (
-    <Card title="News & Events">
+    <Card
+      title={
+        <div className="flex justify-between">
+          <h2>News & Events</h2>
+          <AddNewsEvents />
+        </div>
+      }
+    >
       <Table columns={columns} dataSource={data} />
     </Card>
   );

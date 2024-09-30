@@ -136,6 +136,21 @@ interface NewsEvents {
   img: string;
 }
 
+interface AddNewsEvents {
+  title: string;
+  description: string;
+  type: string;
+  img: string;
+}
+
+interface EditNewsEvents {
+  title: string;
+  description: string;
+  type: string;
+  img: string;
+  prevImg: string | null;
+}
+
 interface FeaturedService {
   id: number;
   title: string;
