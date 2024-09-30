@@ -14,6 +14,7 @@ import SpecialServiceCenter from './pages/SpecialServiceCenter';
 import NewsEvents from './pages/NewsEvents';
 import GeneralServiceCenter from './pages/GeneralServiceCenter';
 import RadiologyServiceCenter from './pages/RadiologyServiceCenter';
+import FeaturedServices from './pages/FeaturedServices';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               path="/services/radiology"
               element={<RadiologyServiceCenter />}
             />
+            <Route path="/services/featured" element={<FeaturedServices />} />
             <Route path="/news-events" element={<NewsEvents />} />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />

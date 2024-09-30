@@ -135,3 +135,23 @@ interface NewsEvents {
   type: string;
   img: string;
 }
+
+interface FeaturedService {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+}
+
+interface AddFeaturedService {
+  title: string;
+  description: string;
+  img: string;
+}
+
+interface EditFeaturedService {
+  title: string;
+  description: string;
+  img: string;
+  prevImg: string;
+}

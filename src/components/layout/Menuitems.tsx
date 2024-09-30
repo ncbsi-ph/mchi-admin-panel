@@ -53,6 +53,10 @@ const items: MenuProps['items'] = [
       <Link to="/services/radiology">Radiology</Link>,
       '/services/radiology'
     ),
+    getItem(
+      <Link to="/services/featured">Featured</Link>,
+      '/services/featured'
+    ),
   ]),
   getItem(
     <Link to="/news-events">News & Events</Link>,

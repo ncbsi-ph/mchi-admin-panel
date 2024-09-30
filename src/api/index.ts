@@ -504,3 +504,43 @@ export const deleteRadiologyServiceImg = async (
     })
     .then((res) => res.data);
 };
+
+export const getFeaturedServices = async (
+  token: string
+): Promise<FeaturedService[]> => {
+  return await api
+    .get('service/featured', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addFeaturedServices = async (
+  payload: AddFeaturedService,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('service/featured', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editFeaturedServices = async (
+  payload: EditFeaturedService,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`service/featured/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteFeaturedServices = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`service/featured/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};
