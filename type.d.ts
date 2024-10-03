@@ -170,3 +170,27 @@ interface EditFeaturedService {
   img: string;
   prevImg: string;
 }
+
+interface Careers {
+  id: number;
+  title: string;
+  slug: string;
+  slots: number;
+  salary_range: string;
+  job_type: string;
+  date_posted: string;
+  date_modified: string;
+  job_summary: string;
+  qualifications: string;
+  is_enabled: boolean;
+}
+
+interface UpsertCareers {
+  title: string;
+  slots: number;
+  salary_range: string;
+  job_type: string;
+  job_summary: string;
+  qualifications: string;
+  is_enabled: boolean;
+}

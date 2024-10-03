@@ -573,3 +573,37 @@ export const deleteFeaturedServices = async (
     })
     .then((res) => res.data);
 };
+
+export const getCareers = async (token: string): Promise<Careers[]> => {
+  return await api
+    .get('careers', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const addCareers = async (
+  payload: UpsertCareers,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('careers', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editCareers = async (
+  payload: UpsertCareers,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`careers/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const deleteCareers = async (
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`careers/${id}`, authorizedConfig(token))
+    .then((res) => res.data);
+};

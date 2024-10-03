@@ -4,6 +4,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BiNews } from 'react-icons/bi';
 import {
   MdInfoOutline,
+  MdOutlineAddHomeWork,
   MdOutlineDashboard,
   MdOutlineHealthAndSafety,
   MdOutlineMedicalServices,
@@ -62,6 +63,11 @@ const items: MenuProps['items'] = [
     <Link to="/news-events">News & Events</Link>,
     '/news-events',
     <BiNews />
+  ),
+  getItem(
+    <Link to="/careers">Careers</Link>,
+    '/careers',
+    <MdOutlineAddHomeWork />
   ),
 ];
 const Menuitems = () => {
