@@ -617,3 +617,28 @@ export const editCareerStatus = async (
     .patch(`careers/status/${id}`, payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getAllAppointment = async (
+  token: string
+): Promise<Appointment[]> => {
+  return await api
+    .get('appointment', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const getAppointmentStatus = async (
+  token: string
+): Promise<AppointmentStatus> => {
+  return await api
+    .get('appointment-status', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editAppointmentStatus = async (
+  payload: AppointmentStatus,
+  token: string
+): Promise<string> => {
+  return await api
+    .patch('appointment-status', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiNews } from 'react-icons/bi';
 import {
+  MdCalendarMonth,
   MdInfoOutline,
   MdOutlineAddHomeWork,
   MdOutlineDashboard,
@@ -68,6 +69,11 @@ const items: MenuProps['items'] = [
     <Link to="/careers">Careers</Link>,
     '/careers',
     <MdOutlineAddHomeWork />
+  ),
+  getItem(
+    <Link to="/appointment">Appointment</Link>,
+    '/appointment',
+    <MdCalendarMonth />
   ),
 ];
 const Menuitems = () => {

@@ -16,6 +16,7 @@ import GeneralServiceCenter from './pages/GeneralServiceCenter';
 import RadiologyServiceCenter from './pages/RadiologyServiceCenter';
 import FeaturedServices from './pages/FeaturedServices';
 import Careers from './pages/Careers';
+import Appointments from './pages/Appointments';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path="/services/featured" element={<FeaturedServices />} />
             <Route path="/news-events" element={<NewsEvents />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/appointment" element={<Appointments />} />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />
             </Route>

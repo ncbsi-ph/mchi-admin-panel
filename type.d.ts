@@ -199,3 +199,22 @@ interface CareerStatus {
   id: number;
   is_enabled: boolean;
 }
+
+interface Appointment {
+  id: number;
+  fname: string;
+  mname: string;
+  lname: string;
+  email: string;
+  contact_no: string;
+  birth_date: string;
+  service: string;
+  procedures: string;
+  preferred_date: string;
+  date_created: string;
+}
+
+interface AppointmentStatus {
+  status: boolean;
+  message: string;
+}
