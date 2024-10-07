@@ -687,3 +687,25 @@ export const changeDoctorEmail = async (
     .post('results/doctor/change-email', payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getTermsPrivacy = async (token: string): Promise<TermsPrivacy> => {
+  return await api
+    .get('terms-privacy', authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const updateTerms = async (
+  token: string,
+  payload: UpdateTerms
+): Promise<string> => {
+  return await api
+    .post('terms', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const updatePrivacy = async (
+  token: string,
+  payload: UpdatePrivacy
+): Promise<string> => {
+  return await api
+    .post('privacy', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};

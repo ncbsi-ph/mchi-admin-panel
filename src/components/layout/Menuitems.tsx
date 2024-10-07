@@ -10,6 +10,7 @@ import {
   MdOutlineDashboard,
   MdOutlineHealthAndSafety,
   MdOutlineMedicalServices,
+  MdOutlinePolicy,
 } from 'react-icons/md';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -80,6 +81,11 @@ const items: MenuProps['items'] = [
     <Link to="/results-account">Results Account</Link>,
     '/results-account',
     <FaUsers />
+  ),
+  getItem(
+    <Link to="/terms-privacy">Terms & Conditions, Privacy Policy</Link>,
+    '/terms-privacy',
+    <MdOutlinePolicy />
   ),
 ];
 const Menuitems = () => {

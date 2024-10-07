@@ -18,6 +18,7 @@ import FeaturedServices from './pages/FeaturedServices';
 import Careers from './pages/Careers';
 import Appointments from './pages/Appointments';
 import ResultAcc from './pages/ResultAcc';
+import TermsPrivacy from './pages/TermsPrivacy';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/appointment" element={<Appointments />} />
             <Route path="/results-account" element={<ResultAcc />} />
+            <Route path="/terms-privacy" element={<TermsPrivacy />} />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />
             </Route>

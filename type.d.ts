@@ -258,3 +258,15 @@ interface DoctorPassword {
   id: string;
   newPassword: string;
 }
+interface TermsPrivacy {
+  id: number;
+  terms_and_conditions: string;
+  privacy_policy: string;
+  last_modified: string;
+}
+interface UpdateTerms {
+  terms_and_conditions: string;
+}
+interface UpdatePrivacy {
+  privacy_policy: string;
+}
