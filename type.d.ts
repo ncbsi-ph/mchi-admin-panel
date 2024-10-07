@@ -218,3 +218,43 @@ interface AppointmentStatus {
   status: boolean;
   message: string;
 }
+interface Patient {
+  id: string;
+  fname: string;
+  mname: string;
+  lname: string;
+  patient_no: string;
+  email: string;
+  contact_no: string;
+  password: string;
+  is_verify: boolean;
+}
+interface PatientEmail {
+  id: string;
+  email: string;
+}
+
+interface PatientPassword {
+  id: string;
+  newPassword: string;
+}
+
+interface Doctor {
+  id: string;
+  fname: string;
+  mname: string;
+  lname: string;
+  doctor_code: string;
+  email: string;
+  contact_no: string;
+  password: string;
+  is_verify: boolean;
+}
+interface DoctorEmail {
+  id: string;
+  email: string;
+}
+interface DoctorPassword {
+  id: string;
+  newPassword: string;
+}

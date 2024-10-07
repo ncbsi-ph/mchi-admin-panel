@@ -642,3 +642,48 @@ export const editAppointmentStatus = async (
     .patch('appointment-status', payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getPatient = async (token: string): Promise<Patient[]> => {
+  return await api
+    .get('results/patients', authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const changePatientEmail = async (
+  payload: PatientEmail,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('results/patient/change-email', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const overridePatientPassword = async (
+  payload: PatientPassword,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('results/patient/override-password', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const getDoctor = async (token: string): Promise<Doctor[]> => {
+  return await api
+    .get('results/doctors', authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const changeDoctorPassword = async (
+  payload: DoctorPassword,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('results/doctor/override-password', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const changeDoctorEmail = async (
+  payload: DoctorEmail,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('results/doctor/change-email', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};

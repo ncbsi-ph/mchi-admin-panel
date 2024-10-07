@@ -2,6 +2,7 @@ import { Menu, MenuProps } from 'antd';
 import { useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiNews } from 'react-icons/bi';
+import { FaUsers } from 'react-icons/fa';
 import {
   MdCalendarMonth,
   MdInfoOutline,
@@ -74,6 +75,11 @@ const items: MenuProps['items'] = [
     <Link to="/appointment">Appointment</Link>,
     '/appointment',
     <MdCalendarMonth />
+  ),
+  getItem(
+    <Link to="/results-account">Results Account</Link>,
+    '/results-account',
+    <FaUsers />
   ),
 ];
 const Menuitems = () => {
