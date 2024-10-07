@@ -8,6 +8,10 @@ import { getCareers } from '../api';
 import { Card, Descriptions, Skeleton } from 'antd';
 import SearchFilter from '../components/SearchFilter';
 import AddCareers from '../components/careers/AddCareers';
+import parse from 'html-react-parser';
+import EditCareerStatus from '../components/careers/EditCareerStatus';
+import EditCareers from '../components/careers/EditCareers';
+import DeleteCareers from '../components/careers/DeleteCareers';
 
 const Careers = () => {
   const [expandedRowKeys, setExpandedRowKeys] = useState([0]);
@@ -32,7 +36,7 @@ const Careers = () => {
       title: 'Status',
       dataIndex: 'is_enabled',
       key: 'is_enabled',
-      // render: (_, record) => <EditCareerStatus data={record} />,
+      render: (_, record) => <EditCareerStatus data={record} />,
       width: 20,
     },
     {
@@ -59,6 +63,16 @@ const Careers = () => {
       dataIndex: 'date_modified',
       key: 'date_modified',
       render: (values) => dayjs(values).format(DATE_FORMAT),
+    },
+    {
+      dataIndex: 'action',
+      key: 'action',
+      render: (_, record) => (
+        <p className="flex justify-end">
+          <EditCareers data={record} />
+          <DeleteCareers data={record} />
+        </p>
+      ),
     },
   ];
 
@@ -110,8 +124,8 @@ const Careers = () => {
         expandable={{
           expandedRowRender: (record) => (
             <Descriptions column={1} title="Requrements">
-              <Descriptions.Item label="Qualifications">
-                {record.qualifications}
+              <Descriptions.Item label="Qualifications" className="ck-content">
+                {parse(record.qualifications)}
               </Descriptions.Item>
               <Descriptions.Item label="Job Type">
                 {record.job_type}

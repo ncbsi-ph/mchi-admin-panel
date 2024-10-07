@@ -194,3 +194,8 @@ interface UpsertCareers {
   qualifications: string;
   is_enabled: boolean;
 }
+
+interface CareerStatus {
+  id: number;
+  is_enabled: boolean;
+}

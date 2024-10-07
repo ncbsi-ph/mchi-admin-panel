@@ -607,3 +607,13 @@ export const deleteCareers = async (
     .delete(`careers/${id}`, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const editCareerStatus = async (
+  payload: boolean,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .patch(`careers/status/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
