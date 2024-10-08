@@ -5,6 +5,8 @@ import { Card, Image, Skeleton } from 'antd';
 import { useQuery } from '@tanstack/react-query';
 import { getFeaturedServices } from '../api';
 import AddFeaturedServices from '../components/services/featured-services/AddFeaturedServices';
+import EditFeaturedServices from '../components/services/featured-services/EditFeaturedServices';
+import DeleteFeaturedServices from '../components/services/featured-services/DeleteFeaturedServices';
 
 const FeaturedServices = () => {
   const { token } = useUser();
@@ -43,6 +45,16 @@ const FeaturedServices = () => {
       title: 'Description',
       dataIndex: 'description',
       key: 'description',
+    },
+    {
+      dataIndex: 'action',
+      key: 'action',
+      render: (_, record) => (
+        <p className="flex justify-end">
+          <EditFeaturedServices data={record} />
+          <DeleteFeaturedServices data={record} />
+        </p>
+      ),
     },
   ];
 

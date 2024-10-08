@@ -168,7 +168,7 @@ interface EditFeaturedService {
   title: string;
   description: string;
   img: string;
-  prevImg: string;
+  prevImg: string | null;
 }
 
 interface Careers {
@@ -269,4 +269,10 @@ interface UpdateTerms {
 }
 interface UpdatePrivacy {
   privacy_policy: string;
+}
+
+interface ChartAppointment {
+  count: number;
+  date: string;
+  status: string;
 }

@@ -709,3 +709,11 @@ export const updatePrivacy = async (
     .post('privacy', payload, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getChartAppointments = async (
+  token: string
+): Promise<ChartAppointment[]> => {
+  return await api
+    .get('chart-appointment', authorizedConfig(token))
+    .then((res) => res.data);
+};

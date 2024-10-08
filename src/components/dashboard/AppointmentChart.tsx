@@ -6,19 +6,22 @@ import {
   Tooltip,
   XAxis,
 } from 'recharts';
-
-const data = [
-  { status: 'Pending', count: 10, date: '2024-09-01' },
-  { status: 'Confirmed', count: 15, date: '2024-09-02' },
-  { status: 'Cancelled', count: 5, date: '2024-09-03' },
-  { status: 'Pending', count: 8, date: '2024-09-04' },
-  { status: 'Confirmed', count: 18, date: '2024-09-05' },
-  { status: 'Cancelled', count: 3, date: '2024-09-06' },
-  { status: 'Pending', count: 7, date: '2024-09-07' },
-  { status: 'Confirmed', count: 20, date: '2024-09-08' },
-];
+import { useUser } from '../../store/store';
+import { useQuery } from '@tanstack/react-query';
+import { getChartAppointments } from '../../api';
+import { Skeleton } from 'antd';
 
 const AppointmentChart = () => {
+  const { token } = useUser();
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['appointment-chart'],
+    queryFn: () => getChartAppointments(token),
+    enabled: !!token,
+  });
+  if (isLoading) return <Skeleton active />;
+  if (error) return <p>{` "An error has occurred: "${error}`}</p>;
+
   return (
     <div className="max-w-[1200px] h-[400px] m-auto">
       <ResponsiveContainer width="100%" height="100%">
