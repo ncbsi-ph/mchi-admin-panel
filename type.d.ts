@@ -320,3 +320,32 @@ interface Specialty {
 interface UpsertSpecialty {
   specialty: string;
 }
+
+interface Institution {
+  id: number;
+  logo: string;
+  logo_white: string;
+  hero_background: string;
+  contact_no: string;
+  address: string;
+  email_general_info: string;
+  email_careers: string;
+  email_hmo_approval: string;
+  email_appointment: string;
+}
+
+interface EditInstitution {
+  id: number;
+  logo: string;
+  logo_white: string;
+  hero_background: string;
+  prevLogo: string | null;
+  prevLogo_white: string | null;
+  prevHero_background: string | null;
+  contact_no: string;
+  address: string;
+  email_general_info: string;
+  email_careers: string;
+  email_hmo_approval: string;
+  email_appointment: string;
+}

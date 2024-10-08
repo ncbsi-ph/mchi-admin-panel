@@ -774,3 +774,18 @@ export const delSpecialties = async (
     .delete(`specialties/${id}`, authorizedConfig(token))
     .then((res) => res.data);
 };
+
+export const getInstitution = async (token: string): Promise<Institution> => {
+  return await api
+    .get('institution', authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const editInstitution = async (
+  payload: EditInstitution,
+  token: string
+): Promise<string> => {
+  return await api
+    .put('institution', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};

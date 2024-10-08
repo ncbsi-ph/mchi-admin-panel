@@ -20,6 +20,7 @@ import Appointments from './pages/Appointments';
 import ResultAcc from './pages/ResultAcc';
 import TermsPrivacy from './pages/TermsPrivacy';
 import Doctors from './pages/Doctors';
+import Institution from './pages/Institution';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
             <Route path="/appointment" element={<Appointments />} />
             <Route path="/results-account" element={<ResultAcc />} />
             <Route path="/terms-privacy" element={<TermsPrivacy />} />
+            <Route path="/institution" element={<Institution />} />
             <Route element={<Authorization />}>
               <Route path="/administrators" element={<Administrators />} />
             </Route>

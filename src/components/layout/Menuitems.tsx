@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiNews } from 'react-icons/bi';
 import { FaUsers } from 'react-icons/fa';
+import { HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
 import {
   MdCalendarMonth,
   MdInfoOutline,
@@ -83,6 +84,11 @@ const items: MenuProps['items'] = [
     <Link to="/results-account">Results Account</Link>,
     '/results-account',
     <FaUsers />
+  ),
+  getItem(
+    <Link to="/institution">Institution</Link>,
+    '/institution',
+    <HiOutlineWrenchScrewdriver />
   ),
   getItem(
     <Link to="/terms-privacy">Terms & Conditions, Privacy Policy</Link>,
