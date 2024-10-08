@@ -12,6 +12,7 @@ import {
   MdOutlineMedicalServices,
   MdOutlinePolicy,
 } from 'react-icons/md';
+import { TbUsersGroup } from 'react-icons/tb';
 import { Link, useLocation } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -62,6 +63,7 @@ const items: MenuProps['items'] = [
       '/services/featured'
     ),
   ]),
+  getItem(<Link to="/doctors">Doctors</Link>, '/doctors', <TbUsersGroup />),
   getItem(
     <Link to="/news-events">News & Events</Link>,
     '/news-events',

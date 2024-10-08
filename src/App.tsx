@@ -19,6 +19,7 @@ import Careers from './pages/Careers';
 import Appointments from './pages/Appointments';
 import ResultAcc from './pages/ResultAcc';
 import TermsPrivacy from './pages/TermsPrivacy';
+import Doctors from './pages/Doctors';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
               element={<RadiologyServiceCenter />}
             />
             <Route path="/services/featured" element={<FeaturedServices />} />
+            <Route path="/doctors" element={<Doctors />} />
             <Route path="/news-events" element={<NewsEvents />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/appointment" element={<Appointments />} />

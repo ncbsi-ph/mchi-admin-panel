@@ -717,3 +717,60 @@ export const getChartAppointments = async (
     .get('chart-appointment', authorizedConfig(token))
     .then((res) => res.data);
 };
+export const getDoctors = async (token: string): Promise<Doctors[]> => {
+  return await api
+    .get('doctors', authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const addDoctors = async (
+  payload: AddDoctors,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('doctors', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const editDoctors = async (
+  payload: EditDoctors,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .put(`doctors/${id}`, payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const deleteDoctors = async (
+  payload: Delete,
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`doctors/${id}`, {
+      data: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => res.data);
+};
+
+export const getSpecialties = async (token: string): Promise<Specialty[]> => {
+  return await api
+    .get('specialties', authorizedConfig(token))
+    .then((res) => res.data);
+};
+export const addSpecialties = async (
+  payload: UpsertSpecialty,
+  token: string
+): Promise<string> => {
+  return await api
+    .post('specialties', payload, authorizedConfig(token))
+    .then((res) => res.data);
+};
+
+export const delSpecialties = async (
+  id: number,
+  token: string
+): Promise<string> => {
+  return await api
+    .delete(`specialties/${id}`, authorizedConfig(token))
+    .then((res) => res.data);
+};

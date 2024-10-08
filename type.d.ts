@@ -276,3 +276,47 @@ interface ChartAppointment {
   date: string;
   status: string;
 }
+interface Doctors {
+  id: number;
+  fname: string;
+  mname: string;
+  lname: string;
+  schedule: string;
+  contact: string;
+  img: string;
+  specialty: Specialties[];
+}
+
+interface Specialties {
+  id: number;
+  doctorId: number;
+  specialty: string;
+}
+interface AddDoctors {
+  fname: string;
+  mname: string | null;
+  lname: string;
+  schedule: string | null;
+  contact: string;
+  img: string | null;
+  specialties: string[];
+}
+
+interface EditDoctors {
+  fname: string;
+  mname: string | null;
+  lname: string;
+  schedule: string | null;
+  contact: string;
+  img: string | null;
+  prevImg: string | null;
+  specialties: string[];
+}
+interface Specialty {
+  id: number;
+  specialty: string;
+}
+
+interface UpsertSpecialty {
+  specialty: string;
+}
