@@ -89,7 +89,10 @@ const DoctorModalForm = ({
           <Form.Item name="schedule" label="Schedule (optional)">
             <Input />
           </Form.Item>
-          <Form.Item name="contact" label="Contact no." className="col-span-2">
+          <Form.Item name="telephone" label="Telephone">
+            <Input />
+          </Form.Item>
+          <Form.Item name="contact" label="Contact no.">
             <Input />
           </Form.Item>
           <Form.Item

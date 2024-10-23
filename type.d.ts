@@ -282,6 +282,7 @@ interface Doctors {
   mname: string;
   lname: string;
   schedule: string;
+  telephone: string;
   contact: string;
   img: string;
   specialty: Specialties[];
@@ -297,6 +298,7 @@ interface AddDoctors {
   mname: string | null;
   lname: string;
   schedule: string | null;
+  telephone: string;
   contact: string;
   img: string | null;
   specialties: string[];
@@ -307,6 +309,7 @@ interface EditDoctors {
   mname: string | null;
   lname: string;
   schedule: string | null;
+  telephone: string;
   contact: string;
   img: string | null;
   prevImg: string | null;

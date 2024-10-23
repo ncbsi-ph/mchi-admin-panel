@@ -54,6 +54,11 @@ const Doctors = () => {
       ),
     },
     {
+      title: 'Telephone',
+      dataIndex: 'telephone',
+      key: 'telephone',
+    },
+    {
       title: 'Contact no.',
       dataIndex: 'contact',
       key: 'contact',

@@ -52,6 +52,7 @@ const EditDoctor = ({ data }: { data: Doctors }) => {
           mname: values.mname === undefined ? null : values.mname,
           lname: values.lname,
           schedule: values.schedule === undefined ? null : values.schedule,
+          telephone: values.telephone,
           contact: values.contact,
           img: isImgChange ? _uploadRes : data.img,
           prevImg: isImgChange ? null : isImgChange ? data.img : null,

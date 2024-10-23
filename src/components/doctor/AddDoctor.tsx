@@ -40,6 +40,7 @@ const AddDoctor = () => {
           mname: values.mname === undefined ? null : values.mname,
           lname: values.lname,
           schedule: values.schedule === undefined ? null : values.schedule,
+          telephone: values.telephone,
           contact: values.contact,
           img: fileList.length !== 0 ? _uploadRes : null,
           specialties:
